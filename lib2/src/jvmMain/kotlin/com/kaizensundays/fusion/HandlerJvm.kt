@@ -5,10 +5,11 @@ package com.kaizensundays.fusion
  *
  * @author Sergey Chuykov
  */
-class HandlerJvm : Handler {
-}
+actual class Handler {
 
-actual fun Handler.handle(msg: String): String {
-    println(msg)
-    return "Ok"
+    actual fun handle(msg: String): String {
+        println(msg)
+        return "Ok"
+    }
+
 }

@@ -5,10 +5,8 @@ package com.kaizensundays.fusion
  *
  * @author Sergey Chuykov
  */
-interface Handler {
+expect class Handler {
 
-    //fun handle(msg: String): String
+    fun handle(msg: String): String
 
 }
-
-expect fun Handler.handle(msg: String): String

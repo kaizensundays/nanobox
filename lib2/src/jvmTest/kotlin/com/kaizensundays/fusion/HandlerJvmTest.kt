@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test
  */
 class HandlerJvmTest {
 
-    private val handler = HandlerJvm()
+    private val handler = Handler()
 
     @Test
     fun test() {
