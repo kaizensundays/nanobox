@@ -1,7 +1,7 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    kotlin("multiplatform") version "1.8.22"
+    alias(libs.plugins.kotlinMultiplatform)
 }
 
 kotlin {
@@ -15,16 +15,20 @@ kotlin {
         implementation(kotlin("test-annotations-common"))
     }
     sourceSets["jvmMain"].dependencies {
-        implementation(kotlin("stdlib-jdk8"))
+        //implementation(kotlin("stdlib-jdk8"))
     }
     sourceSets["jvmTest"].dependencies {
         implementation(kotlin("test"))
-        implementation(kotlin("test-junit"))
+        implementation(kotlin("test-junit5"))
+        //implementation(libs.kotlin.test)
+        //implementation(libs.junit5.api)
+        //implementation(libs.junit5.impl)
+        //implementation(libs.junit5.params)
     }
 }
 
 tasks.withType<Test> {
-    useJUnit()
+    useJUnitPlatform()
     filter {
         excludeTestsMatching("*RemoteTest")
     }

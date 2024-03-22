@@ -4,9 +4,16 @@ kotlin = "1.8.22"
 nexus-publish = "2.0.0-rc-1"
 android-minSdk = "24"
 android-compileSdk = "33"
+#junit5 = "5.10.2"
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
+
+#JUnit
+#junit5-api = { module = "org.junit.jupiter:junit-jupiter-api", version.ref = "junit5" }
+#junit5-impl = { module = "org.junit.jupiter:junit-jupiter-engine", version.ref = "junit5" }
+#junit5-params = { module = "org.junit.jupiter:junit-jupiter-params", version.ref = "junit5" }
+
 nexus-publish = { module = "io.github.gradle-nexus.publish-plugin:io.github.gradle-nexus.publish-plugin.gradle.plugin", version.ref = "nexus-publish" }
 
 [plugins]
