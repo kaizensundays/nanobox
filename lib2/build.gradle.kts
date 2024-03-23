@@ -3,10 +3,12 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
     //alias(libs.plugins.kotlinMultiplatform)
     kotlin("multiplatform")
+    //kotlin("native") version "1.8.22"
 }
 
 kotlin {
     jvm()
+    linuxX64()
 
     sourceSets["commonMain"].dependencies {
         implementation(kotlin("stdlib-common"))
@@ -25,6 +27,14 @@ kotlin {
         //implementation(libs.junit5.api)
         //implementation(libs.junit5.impl)
         //implementation(libs.junit5.params)
+    }
+
+    linuxX64().apply {
+        binaries {
+            executable {
+                entryPoint = "com.kaizensundays.fusion.main"
+            }
+        }
     }
 }
 
