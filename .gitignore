@@ -4,6 +4,7 @@
 
 build
 
+*.jar
 *.iml
 
 local.properties
