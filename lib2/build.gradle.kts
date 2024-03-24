@@ -21,6 +21,7 @@ kotlin {
     }
     sourceSets["jvmMain"].dependencies {
         //implementation(kotlin("stdlib-jdk8"))
+        implementation("ch.qos.logback:logback-classic:1.2.13")
     }
     sourceSets["jvmTest"].dependencies {
         implementation(kotlin("test"))

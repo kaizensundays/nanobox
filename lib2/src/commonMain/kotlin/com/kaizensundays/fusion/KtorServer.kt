@@ -5,6 +5,7 @@ import io.ktor.server.cio.*
 import io.ktor.server.engine.*
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
+import io.ktor.util.logging.*
 import kotlinx.coroutines.CoroutineName
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -19,34 +20,37 @@ class KtorServer(
     private val port: Int
 ) {
 
-    private var engine: ApplicationEngine? = null
+    private lateinit var logger: Logger
+    private lateinit var engine: ApplicationEngine
 
     private fun startServer() {
-        println("startServer")
 
-        embeddedServer(CIO, port = this.port) {
+        engine = embeddedServer(CIO, port = this.port) {
             install(Routing)
             routing {
                 get("/ping") {
                     call.respondText("Ok")
                 }
             }
-        }.start(wait = true)
+        }
+        logger = engine.environment.log
 
+        logger.info("Starting Ktor Server ...")
+        engine.start(wait = true)
+
+        logger.info("Started")
     }
 
     fun start() {
 
         CoroutineScope(Dispatchers.Default + CoroutineName("start")).launch { startServer() }
-
-        println("Started")
     }
 
     fun stop() {
 
-        engine?.stop(3000L, 7000L)
+        engine.stop(3000L, 7000L)
 
-        println("Stopped")
+        logger.info("Stopped")
     }
 
 }
