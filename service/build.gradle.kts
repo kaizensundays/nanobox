@@ -2,8 +2,8 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     kotlin("jvm")
-    id("org.springframework.boot") version "2.7.18"
-    id("com.jfrog.artifactory") version "4.29.0"
+    id("org.springframework.boot")
+    id("com.jfrog.artifactory")
     id("module.publication")
 }
 

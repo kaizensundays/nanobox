@@ -1,7 +1,7 @@
 plugins {
     //alias(libs.plugins.kotlinMultiplatform)
     kotlin("multiplatform")
-    id("module.publication")
+    //id("module.publication")
 }
 
 kotlin {

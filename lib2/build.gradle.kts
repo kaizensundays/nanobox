@@ -3,7 +3,6 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
     //alias(libs.plugins.kotlinMultiplatform)
     kotlin("multiplatform")
-    //kotlin("native") version "1.8.22"
 }
 
 kotlin {
