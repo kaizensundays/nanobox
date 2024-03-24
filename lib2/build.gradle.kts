@@ -5,6 +5,9 @@ plugins {
     kotlin("multiplatform")
 }
 
+val logbackVersion = "1.2.13"
+val ktorVersion = "2.2.4"
+
 kotlin {
     jvm()
     linuxX64()
@@ -12,8 +15,8 @@ kotlin {
     sourceSets["commonMain"].dependencies {
         implementation(kotlin("stdlib-common"))
         //implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
-        implementation("io.ktor:ktor-server-core:2.2.4")
-        implementation("io.ktor:ktor-server-cio:2.2.4")
+        implementation("io.ktor:ktor-server-core:$ktorVersion")
+        implementation("io.ktor:ktor-server-cio:$ktorVersion")
     }
     sourceSets["commonTest"].dependencies {
         implementation(kotlin("test-common"))
@@ -21,7 +24,7 @@ kotlin {
     }
     sourceSets["jvmMain"].dependencies {
         //implementation(kotlin("stdlib-jdk8"))
-        implementation("ch.qos.logback:logback-classic:1.2.13")
+        implementation("ch.qos.logback:logback-classic:$logbackVersion")
     }
     sourceSets["jvmTest"].dependencies {
         implementation(kotlin("test"))
