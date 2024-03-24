@@ -1,5 +1,10 @@
 package com.kaizensundays.fusion
 
+import io.ktor.server.application.*
+import io.ktor.server.cio.*
+import io.ktor.server.engine.*
+import io.ktor.server.response.*
+import io.ktor.server.routing.*
 import kotlinx.coroutines.CoroutineName
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -10,10 +15,24 @@ import kotlinx.coroutines.launch
  *
  * @author Sergey Chuykov
  */
-class KtorServer {
+class KtorServer(
+    private val port: Int
+) {
 
-    fun startServer() {
+    private var engine: ApplicationEngine? = null
+
+    private fun startServer() {
         println("startServer")
+
+        embeddedServer(CIO, port = this.port) {
+            install(Routing)
+            routing {
+                get("/ping") {
+                    call.respondText("Ok")
+                }
+            }
+        }.start(wait = true)
+
     }
 
     fun start() {
@@ -24,6 +43,8 @@ class KtorServer {
     }
 
     fun stop() {
+
+        engine?.stop(3000L, 7000L)
 
         println("Stopped")
     }

@@ -12,10 +12,10 @@ object Main {
     @JvmStatic
     fun main(args: Array<String>) {
 
-        val server = KtorServer()
+        val server = KtorServer(7701)
         server.start()
 
-        sleep(10_000)
+        sleep(60_000)
 
         server.stop()
     }

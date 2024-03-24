@@ -10,10 +10,10 @@ import platform.posix.sleep
 
 fun main() {
 
-    val server = KtorServer()
+    val server = KtorServer(7701)
     server.start()
 
-    sleep(10)
+    sleep(60)
 
     server.stop()
 }

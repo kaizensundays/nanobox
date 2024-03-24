@@ -11,7 +11,9 @@ kotlin {
 
     sourceSets["commonMain"].dependencies {
         implementation(kotlin("stdlib-common"))
-        implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
+        //implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
+        implementation("io.ktor:ktor-server-core:2.2.4")
+        implementation("io.ktor:ktor-server-cio:2.2.4")
     }
     sourceSets["commonTest"].dependencies {
         implementation(kotlin("test-common"))
