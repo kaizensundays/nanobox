@@ -11,6 +11,7 @@ kotlin {
 
     sourceSets["commonMain"].dependencies {
         implementation(kotlin("stdlib-common"))
+        implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
     }
     sourceSets["commonTest"].dependencies {
         implementation(kotlin("test-common"))

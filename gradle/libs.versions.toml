@@ -5,6 +5,7 @@ nexus-publish = "2.0.0-rc-1"
 android-minSdk = "24"
 android-compileSdk = "33"
 #junit5 = "5.10.2"
+kotlinx-coroutines = "1.7.3"
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
