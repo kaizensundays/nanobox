@@ -8,8 +8,9 @@ import io.ktor.server.routing.*
 import io.ktor.util.logging.*
 import kotlinx.coroutines.CoroutineName
 import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.newFixedThreadPoolContext
 
 /**
  * Created: Sunday 3/24/2024, 12:10 PM Eastern Time
@@ -23,7 +24,9 @@ class KtorServer(
     private lateinit var logger: Logger
     private lateinit var engine: ApplicationEngine
 
-    private fun startServer() {
+    private suspend fun coroutine() = "(${kotlin.coroutines.coroutineContext[CoroutineName.Key]}) "
+
+    private suspend fun startServer() {
 
         engine = embeddedServer(CIO, port = this.port) {
             install(Routing)
@@ -35,15 +38,21 @@ class KtorServer(
         }
         logger = engine.environment.log
 
-        logger.info("Starting Ktor Server ...")
+        println("")
+        logger.info(coroutine() + "Starting Ktor Server ...")
         engine.start(wait = true)
 
         logger.info("Started")
     }
 
+    @OptIn(ExperimentalCoroutinesApi::class)
     fun start() {
 
-        CoroutineScope(Dispatchers.Default + CoroutineName("start")).launch { startServer() }
+        val dispatcher = newFixedThreadPoolContext(4, "nano")
+
+        CoroutineScope(dispatcher + CoroutineName("startServer")).launch {
+            startServer()
+        }
     }
 
     fun stop() {
