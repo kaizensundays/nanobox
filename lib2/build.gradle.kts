@@ -5,8 +5,8 @@ plugins {
     kotlin("multiplatform")
 }
 
-val logbackVersion = "1.2.13"
-val ktorVersion = "2.2.4"
+val logbackVersion: String by project
+val ktorVersion: String by project
 
 kotlin {
     jvm()
