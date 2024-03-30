@@ -40,7 +40,7 @@ class KtorServer(
 
         println("")
         logger.info(coroutine() + "Starting Ktor Server ...")
-        engine.start(wait = true)
+        engine.start(wait = false)
 
         logger.info("Started")
     }
