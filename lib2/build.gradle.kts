@@ -7,6 +7,7 @@ plugins {
 
 val logbackVersion: String by project
 val ktorVersion: String by project
+val okioVersion: String by project
 
 kotlin {
     jvm()
@@ -17,6 +18,7 @@ kotlin {
         //implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
         implementation("io.ktor:ktor-server-core:$ktorVersion")
         implementation("io.ktor:ktor-server-cio:$ktorVersion")
+        implementation("com.squareup.okio:okio:$okioVersion")
     }
     sourceSets["commonTest"].dependencies {
         implementation(kotlin("test-common"))
