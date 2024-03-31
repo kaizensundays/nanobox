@@ -17,12 +17,12 @@ import kotlinx.coroutines.newFixedThreadPoolContext
  *
  * @author Sergey Chuykov
  */
-class KtorServer(
-    private val port: Int
-) {
+class KtorServer {
 
     private lateinit var logger: Logger
     private lateinit var engine: ApplicationEngine
+
+    var port = 7700
 
     private suspend fun coroutine() = "(${kotlin.coroutines.coroutineContext[CoroutineName.Key]}) "
 
@@ -38,11 +38,13 @@ class KtorServer(
         }
         logger = engine.environment.log
 
+        engine.environment.monitor.subscribe(ApplicationStarted) {
+            logger.info("Ktor Server Started on port $port")
+        }
+
         println("")
         logger.info(coroutine() + "Starting Ktor Server ...")
-        engine.start(wait = false)
-
-        logger.info("Started")
+        engine.start(wait = true)
     }
 
     @OptIn(ExperimentalCoroutinesApi::class)

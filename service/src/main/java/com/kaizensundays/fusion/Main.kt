@@ -1,5 +1,7 @@
 package com.kaizensundays.fusion
 
+import org.springframework.context.support.ClassPathXmlApplicationContext
+
 /**
  * Created: Saturday 3/23/2024, 12:19 PM Eastern Time
  *
@@ -10,13 +12,10 @@ object Main {
     @JvmStatic
     fun main(args: Array<String>) {
 
-        val server = KtorServer(7711)
-        server.start()
-
-        Runtime.getRuntime().addShutdownHook(Thread({ server.stop() }, "shutdown"))
+        val context = ClassPathXmlApplicationContext("/NanoBoxContext.xml")
+        context.registerShutdownHook()
 
         val lock = Object()
-
         Thread { synchronized(lock) { lock.wait() } }.start()
     }
 

@@ -13,7 +13,8 @@ fun main() {
 
     val port = getEnvAsInt("SERVER_PORT", 7700)
 
-    val server = KtorServer(port)
+    val server = KtorServer()
+    server.port = port
     server.start()
 
     sleep(60)
