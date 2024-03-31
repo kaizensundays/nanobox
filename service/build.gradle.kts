@@ -11,12 +11,11 @@ plugins {
 group = "com.kaizensundays.fusion"
 version = "0.0.1-SNAPSHOT"
 
-val springVersion: String by project
-
 dependencies {
 
     implementation(project(":lib2"))
-    implementation("org.springframework:spring-context:$springVersion")
+
+    springContext()
 
     testImplementation(kotlin("test"))
     testImplementation(kotlin("test-junit5"))

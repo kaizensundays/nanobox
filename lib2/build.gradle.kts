@@ -3,11 +3,12 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
     //alias(libs.plugins.kotlinMultiplatform)
     kotlin("multiplatform")
+    id("dependency-management")
 }
 
-val logbackVersion: String by project
-val ktorVersion: String by project
-val okioVersion: String by project
+//val logbackVersion: String by project
+//val ktorVersion: String by project
+//val okioVersion: String by project
 
 kotlin {
     jvm()
@@ -16,9 +17,12 @@ kotlin {
     sourceSets["commonMain"].dependencies {
         implementation(kotlin("stdlib-common"))
         //implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
-        implementation("io.ktor:ktor-server-core:$ktorVersion")
-        implementation("io.ktor:ktor-server-cio:$ktorVersion")
-        implementation("com.squareup.okio:okio:$okioVersion")
+        //implementation("io.ktor:ktor-server-core:$ktorVersion")
+        //implementation("io.ktor:ktor-server-cio:$ktorVersion")
+        ktor()
+        //implementation("com.squareup.okio:okio:$okioVersion")
+        //implementation(Dependencies.okio)
+        okio()
     }
     sourceSets["commonTest"].dependencies {
         implementation(kotlin("test-common"))
@@ -26,7 +30,8 @@ kotlin {
     }
     sourceSets["jvmMain"].dependencies {
         //implementation(kotlin("stdlib-jdk8"))
-        implementation("ch.qos.logback:logback-classic:$logbackVersion")
+        //implementation("ch.qos.logback:logback-classic:$logbackVersion")
+        logback()
     }
     sourceSets["jvmTest"].dependencies {
         implementation(kotlin("test"))
