@@ -40,7 +40,7 @@ kotlin {
     linuxX64().apply {
         binaries {
             executable {
-                entryPoint = "com.kaizensundays.fusion.main"
+                entryPoint = "com.kaizensundays.fusion.nanobox.linux.main"
             }
         }
     }

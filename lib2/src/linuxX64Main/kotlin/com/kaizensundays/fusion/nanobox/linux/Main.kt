@@ -1,5 +1,6 @@
-package com.kaizensundays.fusion
+package com.kaizensundays.fusion.nanobox.linux
 
+import com.kaizensundays.fusion.KtorServer
 import platform.posix.sleep
 
 /**
@@ -10,7 +11,9 @@ import platform.posix.sleep
 
 fun main() {
 
-    val server = KtorServer(7701)
+    val port = getEnvAsInt("SERVER_PORT", 7700)
+
+    val server = KtorServer(port)
     server.start()
 
     sleep(60)
