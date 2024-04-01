@@ -15,7 +15,7 @@ kotlin {
     linuxX64()
 
     sourceSets["commonMain"].dependencies {
-        implementation(kotlin("stdlib-common"))
+        //implementation(kotlin("stdlib-common"))
         //implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
         //implementation("io.ktor:ktor-server-core:$ktorVersion")
         //implementation("io.ktor:ktor-server-cio:$ktorVersion")
@@ -33,7 +33,8 @@ kotlin {
     sourceSets["jvmMain"].dependencies {
         //implementation(kotlin("stdlib-jdk8"))
         //implementation("ch.qos.logback:logback-classic:$logbackVersion")
-        logback()
+        //logback()
+        implementation(libs.logback.classic)
     }
     sourceSets["jvmTest"].dependencies {
         implementation(kotlin("test"))
