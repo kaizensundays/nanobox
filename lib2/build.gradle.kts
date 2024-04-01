@@ -20,9 +20,9 @@ kotlin {
         //implementation("io.ktor:ktor-server-core:$ktorVersion")
         //implementation("io.ktor:ktor-server-cio:$ktorVersion")
         ktor()
-        //implementation("com.squareup.okio:okio:$okioVersion")
-        //implementation(Dependencies.okio)
-        okio()
+        //implementation("com.squareup.okio:okio:3.4.0")
+        //okio()
+        implementation(libs.squareup.okio)
     }
     sourceSets["commonTest"].dependencies {
         implementation(kotlin("test-common"))
