@@ -15,7 +15,8 @@ dependencies {
 
     implementation(project(":lib2"))
 
-    springContext()
+    //springContext()
+    implementation(libs.spring.context)
 
     testImplementation(kotlin("test"))
     testImplementation(kotlin("test-junit5"))
