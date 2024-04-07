@@ -5,7 +5,8 @@ plugins {
     kotlin("plugin.spring")
     id("org.springframework.boot")
     id("com.jfrog.artifactory")
-    id("module.publication")
+    //id("module.publication")
+    `maven-publish`
 }
 
 group = "com.kaizensundays.fusion"

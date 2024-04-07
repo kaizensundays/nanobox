@@ -3,12 +3,10 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
     //alias(libs.plugins.kotlinMultiplatform)
     kotlin("multiplatform")
+    id("com.jfrog.artifactory")
     id("dependency-management")
+    `maven-publish`
 }
-
-//val logbackVersion: String by project
-//val ktorVersion: String by project
-//val okioVersion: String by project
 
 kotlin {
     jvm()
@@ -63,4 +61,26 @@ tasks.withType<Test> {
 
 tasks.withType<KotlinCompile> {
     kotlinOptions.jvmTarget = "1.8"
+}
+
+println("Publication names:")
+publishing.publications.all {
+    println(name)
+}
+
+artifactory {
+    setContextUrl(project.properties["artifactory.url"] as String)
+    publish {
+        repository {
+            setRepoKey("libs-snapshot-local")
+            setUsername(project.properties["artifactory.username"] as String)
+            setPassword(project.properties["artifactory.password"] as String)
+            setMavenCompatible(true)
+        }
+        defaults {
+            publications("kotlinMultiplatform","jvm", "linuxX64")
+            setPublishArtifacts(true)
+            setPublishPom(true)
+        }
+    }
 }
