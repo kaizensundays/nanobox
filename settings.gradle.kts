@@ -14,7 +14,7 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "nano-box"
+rootProject.name = "nanobox"
 
 include(":lib2")
 include(":service")
