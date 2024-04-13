@@ -1,4 +1,4 @@
-package com.kaizensundays.fusion
+package com.kaizensundays.fusion.nanobox
 
 import io.ktor.server.application.*
 import io.ktor.server.cio.*

@@ -7,7 +7,7 @@
     <bean class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer"
     />
 
-    <bean id="server" class="com.kaizensundays.fusion.KtorServer"
+    <bean id="server" class="com.kaizensundays.fusion.nanobox.KtorServer"
           p:port="${SERVER_PORT}"
     />
 

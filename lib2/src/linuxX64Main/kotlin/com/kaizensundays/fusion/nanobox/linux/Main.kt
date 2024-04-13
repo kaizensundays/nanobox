@@ -1,6 +1,6 @@
 package com.kaizensundays.fusion.nanobox.linux
 
-import com.kaizensundays.fusion.KtorServer
+import com.kaizensundays.fusion.nanobox.KtorServer
 import platform.posix.sleep
 
 /**
