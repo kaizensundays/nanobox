@@ -3,6 +3,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
     //alias(libs.plugins.kotlinMultiplatform)
     kotlin("multiplatform")
+    kotlin("plugin.serialization")
     id("com.jfrog.artifactory")
     id("dependency-management")
     `maven-publish`
@@ -17,6 +18,7 @@ kotlin {
         //implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
         //implementation("io.ktor:ktor-server-core:$ktorVersion")
         //implementation("io.ktor:ktor-server-cio:$ktorVersion")
+        implementation(libs.kotlinx.serialization)
         //ktor()
         implementation(libs.ktor.server.core)
         implementation(libs.ktor.server.cio)
