@@ -5,7 +5,7 @@ package com.kaizensundays.fusion.nanobox
  *
  * @author Sergey Chuykov
  */
-fun interface HandlerInf {
+fun interface Handler {
 
     fun handle(msg: String): String
 

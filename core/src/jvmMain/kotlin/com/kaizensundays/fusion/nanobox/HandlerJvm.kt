@@ -8,7 +8,7 @@ import org.slf4j.LoggerFactory
  *
  * @author Sergey Chuykov
  */
-actual class HandlerImpl(private val jsonConverter: JsonObjectConverter): HandlerInf {
+actual class HandlerImpl(private val jsonConverter: JsonObjectConverter): Handler {
 
     private val logger: Logger = LoggerFactory.getLogger(javaClass)
 

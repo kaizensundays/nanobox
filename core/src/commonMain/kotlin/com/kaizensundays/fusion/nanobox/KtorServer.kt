@@ -25,7 +25,7 @@ class KtorServer {
 
     var port = 7700
 
-    lateinit var handler: HandlerInf
+    lateinit var handler: Handler
 
     private suspend fun coroutine() = "(${kotlin.coroutines.coroutineContext[CoroutineName.Key]}) "
 
