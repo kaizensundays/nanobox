@@ -1,6 +1,5 @@
-package com.kaizensundays.fusion
+package com.kaizensundays.fusion.nanobox
 
-import com.kaizensundays.fusion.nanobox.Handler
 import okio.FileSystem
 import okio.Path.Companion.toPath
 import org.junit.jupiter.api.Test
