@@ -3,6 +3,7 @@ package com.kaizensundays.fusion.nanobox
 import io.ktor.server.application.*
 import io.ktor.server.cio.*
 import io.ktor.server.engine.*
+import io.ktor.server.request.receive
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
 import io.ktor.util.logging.*
@@ -24,6 +25,8 @@ class KtorServer {
 
     var port = 7700
 
+    lateinit var handler: Handler
+
     private suspend fun coroutine() = "(${kotlin.coroutines.coroutineContext[CoroutineName.Key]}) "
 
     private suspend fun startServer() {
@@ -33,6 +36,11 @@ class KtorServer {
             routing {
                 get("/ping") {
                     call.respondText("Ok")
+                }
+                post("/handle") {
+                    val msg = call.receive<String>()
+                    val result = handler.handle(msg)
+                    call.respondText(result)
                 }
             }
         }
