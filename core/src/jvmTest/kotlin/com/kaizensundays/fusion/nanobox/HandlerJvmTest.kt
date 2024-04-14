@@ -3,6 +3,7 @@ package com.kaizensundays.fusion.nanobox
 import okio.FileSystem
 import okio.Path.Companion.toPath
 import org.junit.jupiter.api.Test
+import org.mockito.kotlin.mock
 
 /**
  * Created: Thursday 3/21/2024, 9:56 PM Eastern Time
@@ -11,7 +12,7 @@ import org.junit.jupiter.api.Test
  */
 class HandlerJvmTest {
 
-    private val handler = Handler()
+    private val handler = Handler(mock())
 
     @Test
     fun handle() {

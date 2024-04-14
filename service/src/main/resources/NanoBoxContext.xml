@@ -7,6 +7,14 @@
     <bean class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer"
     />
 
+    <bean id="jsonObjectConverterFactory" class="com.kaizensundays.fusion.nanobox.DefaultMessageJsonObjectConverterFactory"/>
+
+    <bean id="jsonObjectConverter" factory-bean="jsonObjectConverterFactory" factory-method="create"/>
+
+    <bean id="handler" class="com.kaizensundays.fusion.nanobox.Handler">
+        <constructor-arg type="com.kaizensundays.fusion.nanobox.JsonObjectConverter" ref="jsonObjectConverter"/>
+    </bean>
+
     <bean id="server" class="com.kaizensundays.fusion.nanobox.KtorServer"
           p:port="${SERVER_PORT}"
     />

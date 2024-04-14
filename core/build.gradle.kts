@@ -39,7 +39,7 @@ kotlin {
     sourceSets["jvmTest"].dependencies {
         implementation(kotlin("test"))
         implementation(kotlin("test-junit5"))
-        //implementation(libs.kotlin.test)
+        implementation(libs.mockito.kotlin)
         //implementation(libs.junit5.api)
         //implementation(libs.junit5.impl)
         //implementation(libs.junit5.params)

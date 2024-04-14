@@ -3,6 +3,7 @@ kotlin = "1.8.22"
 nexus-publish = "2.0.0-rc-1"
 #junit5 = "5.10.2"
 logback-version = "1.2.13"
+mockito-kotlin-version = "3.2.0"
 kotlinx-coroutines = "1.7.3"
 kotlinx-serialization-version = "1.4.1"
 ktor-version = "2.2.4"
@@ -11,6 +12,7 @@ spring-version = "5.3.33"
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
+mockito-kotlin = { module = "org.mockito.kotlin:mockito-kotlin", version.ref = "mockito-kotlin-version"}
 
 #JUnit
 #junit5-api = { module = "org.junit.jupiter:junit-jupiter-api", version.ref = "junit5" }
