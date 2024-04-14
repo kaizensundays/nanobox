@@ -1,10 +1,10 @@
 package com.kaizensundays.fusion.nanobox
 
-import kotlinx.serialization.PolymorphicSerializer
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.modules.SerializersModule
 import kotlinx.serialization.serializer
 import kotlin.test.Test
+import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 
 /**
@@ -22,17 +22,29 @@ class ObjectSerializationTest {
             polymorphic(Message::class, Status::class, serializer())
         }
 
-        val jsonConverter = Json {
+        val jsonConf = Json {
             serializersModule = messageSerializerModule
             classDiscriminator = "@class"
+            prettyPrint = true
         }
 
-        var json = jsonConverter.encodeToString(PolymorphicSerializer(Message::class), Notification("Ok"))
-        assertTrue(json.matches(".*@class.*.Notification.*".toRegex()))
+        val converter: JsonObjectConverter = DefaultJsonObjectConverter(jsonConf)
 
-        json = jsonConverter.encodeToString(PolymorphicSerializer(Message::class), Status("Up"))
-        assertTrue(json.matches(".*@class.*Status.*".toRegex()))
+        var json = converter.fromObject(Notification("Ok"), Message::class)
+        println(json)
+        assertTrue(json.matches(Regex("(?s).*@class.*.Notification.*")))
 
+        var msg = converter.toObject(json, Message::class)
+        assertTrue(msg is Notification)
+        assertEquals("Ok", msg.text)
+
+        json = converter.fromObject(Status("Up"), Message::class)
+        println(json)
+        assertTrue(json.matches(Regex("(?s).*@class.*.Status.*")))
+
+        msg = converter.toObject(json, Message::class)
+        assertTrue(msg is Status)
+        assertEquals("Up", msg.text)
     }
 
 }
