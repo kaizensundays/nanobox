@@ -5,4 +5,4 @@ package com.kaizensundays.fusion.nanobox
  *
  * @author Sergey Chuykov
  */
-expect class Handler : HandlerInf
+expect class HandlerImpl : HandlerInf

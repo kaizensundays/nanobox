@@ -5,7 +5,7 @@ package com.kaizensundays.fusion.nanobox
  *
  * @author Sergey Chuykov
  */
-actual class Handler : HandlerInf {
+actual class HandlerImpl : HandlerInf {
 
     override fun handle(msg: String): String {
         println(msg)

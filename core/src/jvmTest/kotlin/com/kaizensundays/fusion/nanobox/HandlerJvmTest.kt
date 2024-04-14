@@ -12,7 +12,7 @@ import org.mockito.kotlin.mock
  */
 class HandlerJvmTest {
 
-    private val handler = Handler(mock())
+    private val handler = HandlerImpl(mock())
 
     @Test
     fun handle() {

@@ -11,7 +11,7 @@
 
     <bean id="jsonObjectConverter" factory-bean="jsonObjectConverterFactory" factory-method="create"/>
 
-    <bean id="handler" class="com.kaizensundays.fusion.nanobox.Handler">
+    <bean id="handler" class="com.kaizensundays.fusion.nanobox.HandlerImpl">
         <constructor-arg type="com.kaizensundays.fusion.nanobox.JsonObjectConverter" ref="jsonObjectConverter"/>
     </bean>
 
