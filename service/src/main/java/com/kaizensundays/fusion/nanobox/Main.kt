@@ -1,4 +1,4 @@
-package com.kaizensundays.fusion
+package com.kaizensundays.fusion.nanobox
 
 import org.springframework.context.support.ClassPathXmlApplicationContext
 
