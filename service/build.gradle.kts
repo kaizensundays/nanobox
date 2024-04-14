@@ -14,7 +14,7 @@ version = "0.0.1-SNAPSHOT"
 
 dependencies {
 
-    implementation(project(":lib2"))
+    implementation(project(":core"))
 
     //springContext()
     implementation(libs.spring.context)
