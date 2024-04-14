@@ -8,11 +8,11 @@ import org.slf4j.LoggerFactory
  *
  * @author Sergey Chuykov
  */
-actual class Handler(private val jsonConverter: JsonObjectConverter) {
+actual class Handler(private val jsonConverter: JsonObjectConverter): HandlerInf {
 
     private val logger: Logger = LoggerFactory.getLogger(javaClass)
 
-    actual fun handle(msg: String): String {
+    override fun handle(msg: String): String {
         println(msg)
 
         return try {

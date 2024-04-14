@@ -5,8 +5,4 @@ package com.kaizensundays.fusion.nanobox
  *
  * @author Sergey Chuykov
  */
-expect class Handler {
-
-    fun handle(msg: String): String
-
-}
+expect class Handler : HandlerInf
