@@ -1,7 +1,6 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    //alias(libs.plugins.kotlinMultiplatform)
     kotlin("multiplatform")
     kotlin("plugin.serialization")
     id("com.jfrog.artifactory")
