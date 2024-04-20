@@ -8,7 +8,7 @@ kotlinx-coroutines = "1.7.3"
 kotlinx-serialization-version = "1.4.1"
 ktor-version = "2.2.4"
 okio-version = "3.4.0"
-spring-version = "5.3.33"
+spring-version = "5.3.34"
 
 [libraries]
 kotlin-gradle-plugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
