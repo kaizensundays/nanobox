@@ -1,16 +1,15 @@
 [versions]
-kotlin = "1.8.22"
+kotlin-version = "1.8.22"
 logback-version = "1.2.13"
 mockito-kotlin-version = "3.2.0"
-kotlinx-coroutines = "1.7.3"
 kotlinx-serialization-version = "1.4.1"
 ktor-version = "2.2.4"
 okio-version = "3.4.0"
 spring-version = "5.3.34"
 
 [libraries]
-kotlin-gradle-plugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
-kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
+kotlin-gradle-plugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin-version" }
+kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin-version" }
 
 mockito-kotlin = { module = "org.mockito.kotlin:mockito-kotlin", version.ref = "mockito-kotlin-version" }
 
@@ -28,4 +27,4 @@ spring-context = { module = "org.springframework:spring-context", version.ref = 
 [bundles]
 
 [plugins]
-kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin-version" }
