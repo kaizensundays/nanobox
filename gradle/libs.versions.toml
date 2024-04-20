@@ -1,7 +1,5 @@
 [versions]
 kotlin = "1.8.22"
-nexus-publish = "2.0.0-rc-1"
-#junit5 = "5.10.2"
 logback-version = "1.2.13"
 mockito-kotlin-version = "3.2.0"
 kotlinx-coroutines = "1.7.3"
@@ -16,11 +14,6 @@ kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotl
 
 mockito-kotlin = { module = "org.mockito.kotlin:mockito-kotlin", version.ref = "mockito-kotlin-version" }
 
-#JUnit
-#junit5-api = { module = "org.junit.jupiter:junit-jupiter-api", version.ref = "junit5" }
-#junit5-impl = { module = "org.junit.jupiter:junit-jupiter-engine", version.ref = "junit5" }
-#junit5-params = { module = "org.junit.jupiter:junit-jupiter-params", version.ref = "junit5" }
-
 logback-classic = { module = "ch.qos.logback:logback-classic", version.ref = "logback-version" }
 
 kotlinx-serialization = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinx-serialization-version" }
@@ -31,8 +24,6 @@ ktor-server-cio = { module = "io.ktor:ktor-server-cio", version.ref = "ktor-vers
 squareup-okio = { module = "com.squareup.okio:okio", version.ref = "okio-version" }
 
 spring-context = { module = "org.springframework:spring-context", version.ref = "spring-version" }
-
-nexus-publish = { module = "io.github.gradle-nexus.publish-plugin:io.github.gradle-nexus.publish-plugin.gradle.plugin", version.ref = "nexus-publish" }
 
 [bundles]
 
