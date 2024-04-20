@@ -5,7 +5,6 @@ plugins {
     kotlin("plugin.spring")
     id("org.springframework.boot")
     id("com.jfrog.artifactory")
-    //id("module.publication")
     `maven-publish`
 }
 
@@ -16,7 +15,6 @@ dependencies {
 
     implementation(project(":core"))
 
-    //springContext()
     implementation(libs.spring.context)
 
     testImplementation(kotlin("test"))
