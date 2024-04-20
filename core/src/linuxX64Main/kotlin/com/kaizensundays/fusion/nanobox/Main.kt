@@ -1,4 +1,4 @@
-package com.kaizensundays.fusion.nanobox.linux
+package com.kaizensundays.fusion.nanobox
 
 import com.kaizensundays.fusion.nanobox.DefaultMessageJsonObjectConverterFactory
 import com.kaizensundays.fusion.nanobox.HandlerImpl

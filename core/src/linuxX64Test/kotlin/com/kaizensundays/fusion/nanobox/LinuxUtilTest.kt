@@ -1,4 +1,4 @@
-package com.kaizensundays.fusion.nanobox.linux
+package com.kaizensundays.fusion.nanobox
 
 import platform.posix.setenv
 import kotlin.test.Test

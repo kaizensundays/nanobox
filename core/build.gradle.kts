@@ -34,7 +34,7 @@ kotlin {
     linuxX64().apply {
         binaries {
             executable(bundleName) {
-                entryPoint = "com.kaizensundays.fusion.nanobox.linux.main"
+                entryPoint = "com.kaizensundays.fusion.nanobox.main"
             }
         }
     }

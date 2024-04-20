@@ -1,4 +1,4 @@
-package com.kaizensundays.fusion.nanobox.linux
+package com.kaizensundays.fusion.nanobox
 
 import kotlinx.cinterop.toKString
 import platform.posix.getenv
