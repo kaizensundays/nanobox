@@ -35,7 +35,7 @@ tasks.withType<Test> {
 }
 
 tasks.bootJar {
-    archiveFileName.set("service.jar")
+    archiveFileName.set("$bundleName.jar")
     destinationDirectory.set(file("bin"))
 }
 

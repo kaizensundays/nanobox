@@ -7,3 +7,5 @@
 const val KotlinVersion = "1.8.22"
 const val SpringBootVersion = "2.7.18"
 const val JFrogAartifactoryPluginVersion = "4.29.0"
+
+const val bundleName = "nanobox"

@@ -1,5 +1,7 @@
 package com.kaizensundays.fusion.nanobox.linux
 
+import com.kaizensundays.fusion.nanobox.DefaultMessageJsonObjectConverterFactory
+import com.kaizensundays.fusion.nanobox.HandlerImpl
 import com.kaizensundays.fusion.nanobox.KtorServer
 import platform.posix.sleep
 
@@ -11,10 +13,15 @@ import platform.posix.sleep
 
 fun main() {
 
-    val port = getEnvAsInt("SERVER_PORT", 7700)
+    val serverPort = getEnvAsInt("SERVER_PORT", 7700)
 
-    val server = KtorServer()
-    server.port = port
+    val factory = DefaultMessageJsonObjectConverterFactory()
+    val converter = factory.create()
+
+    val server = KtorServer().apply {
+        port = serverPort
+        handler = HandlerImpl(converter)
+    }
     server.start()
 
     sleep(60)
