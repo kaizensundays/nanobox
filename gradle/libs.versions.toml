@@ -1,0 +1,30 @@
+[versions]
+kotlin-version = "1.8.22"
+logback-version = "1.2.13"
+mockito-kotlin-version = "3.2.0"
+kotlinx-serialization-version = "1.4.1"
+ktor-version = "2.2.4"
+okio-version = "3.4.0"
+spring-version = "5.3.34"
+
+[libraries]
+kotlin-gradle-plugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin-version" }
+kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin-version" }
+
+mockito-kotlin = { module = "org.mockito.kotlin:mockito-kotlin", version.ref = "mockito-kotlin-version" }
+
+logback-classic = { module = "ch.qos.logback:logback-classic", version.ref = "logback-version" }
+
+kotlinx-serialization = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinx-serialization-version" }
+
+ktor-server-core = { module = "io.ktor:ktor-server-core", version.ref = "ktor-version" }
+ktor-server-cio = { module = "io.ktor:ktor-server-cio", version.ref = "ktor-version" }
+
+squareup-okio = { module = "com.squareup.okio:okio", version.ref = "okio-version" }
+
+spring-context = { module = "org.springframework:spring-context", version.ref = "spring-version" }
+
+[bundles]
+
+[plugins]
+kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin-version" }
