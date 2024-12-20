@@ -4,7 +4,7 @@
  * @author Sergey Chuykov
  */
 
-const val KotlinVersion = "1.9.25"
+const val KotlinVersion = "2.0.21"
 const val SpringBootVersion = "2.7.18"
 const val JFrogAartifactoryPluginVersion = "4.29.0"
 
