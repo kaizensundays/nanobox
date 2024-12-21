@@ -2,7 +2,7 @@
 
 export SERVER_PORT=7711
 
-$JAVA_11_HOME/bin/java -jar nanobox.jar
+$JAVA_17_HOME/bin/java -jar nanobox.jar
 
 
 

@@ -5,9 +5,10 @@ package com.kaizensundays.fusion.nanobox
  *
  * @author Sergey Chuykov
  */
+@Suppress("EXPECT_ACTUAL_CLASSIFIERS_ARE_IN_BETA_WARNING")
 actual class HandlerImpl(private val jsonConverter: JsonObjectConverter) : Handler {
 
-    override fun handle(msg: String): String {
+    actual override fun handle(msg: String): String {
         println(msg)
 
         return try {

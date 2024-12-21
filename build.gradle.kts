@@ -4,5 +4,5 @@ plugins {
     kotlin("plugin.serialization") version KotlinVersion apply false
     kotlin("plugin.spring") version KotlinVersion apply false
     id("org.springframework.boot") version SpringBootVersion apply false
-    id("com.jfrog.artifactory") version JFrogAartifactoryPluginVersion apply false
+    id("com.jfrog.artifactory") version JFrogArtifactoryPluginVersion apply false
 }

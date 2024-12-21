@@ -1,8 +1,5 @@
 package com.kaizensundays.fusion.nanobox
 
-import com.kaizensundays.fusion.nanobox.DefaultMessageJsonObjectConverterFactory
-import com.kaizensundays.fusion.nanobox.HandlerImpl
-import com.kaizensundays.fusion.nanobox.KtorServer
 import platform.posix.sleep
 
 /**
@@ -24,7 +21,7 @@ fun main() {
     }
     server.start()
 
-    sleep(60)
+    sleep(60u)
 
     server.stop()
 }
