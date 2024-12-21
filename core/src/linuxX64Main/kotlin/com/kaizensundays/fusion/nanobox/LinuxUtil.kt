@@ -1,5 +1,6 @@
 package com.kaizensundays.fusion.nanobox
 
+import kotlinx.cinterop.ExperimentalForeignApi
 import kotlinx.cinterop.toKString
 import platform.posix.getenv
 
@@ -9,6 +10,7 @@ import platform.posix.getenv
  * @author Sergey Chuykov
  */
 
+@OptIn(ExperimentalForeignApi::class)
 fun getEnv(name: String): String? {
     return getenv(name)?.toKString()
 }

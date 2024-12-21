@@ -5,4 +5,7 @@ package com.kaizensundays.fusion.nanobox
  *
  * @author Sergey Chuykov
  */
-expect class HandlerImpl : Handler
+@Suppress("EXPECT_ACTUAL_CLASSIFIERS_ARE_IN_BETA_WARNING")
+expect class HandlerImpl : Handler {
+    override fun handle(msg: String): String
+}

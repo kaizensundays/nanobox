@@ -4,8 +4,8 @@
  * @author Sergey Chuykov
  */
 
-const val KotlinVersion = "1.8.22"
-const val SpringBootVersion = "2.7.18"
-const val JFrogAartifactoryPluginVersion = "4.29.0"
+const val KotlinVersion = "2.0.21"
+const val SpringBootVersion = "3.4.1"
+const val JFrogArtifactoryPluginVersion = "5.2.5"
 
 const val bundleName = "nanobox"
