@@ -8,11 +8,12 @@ import org.slf4j.LoggerFactory
  *
  * @author Sergey Chuykov
  */
+@Suppress("EXPECT_ACTUAL_CLASSIFIERS_ARE_IN_BETA_WARNING")
 actual class HandlerImpl(private val jsonConverter: JsonObjectConverter): Handler {
 
     private val logger: Logger = LoggerFactory.getLogger(javaClass)
 
-    override fun handle(msg: String): String {
+    actual override fun handle(msg: String): String {
         println(msg)
 
         return try {

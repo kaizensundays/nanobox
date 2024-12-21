@@ -1,3 +1,4 @@
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
@@ -47,8 +48,10 @@ tasks.withType<Test> {
     }
 }
 
-tasks.withType<KotlinCompile> {
-    kotlinOptions.jvmTarget = "11"
+tasks.withType<KotlinCompile>().configureEach {
+    compilerOptions {
+        jvmTarget.set(JvmTarget.JVM_17)
+    }
 }
 
 println("Publication names:")
@@ -60,10 +63,9 @@ artifactory {
     setContextUrl(project.properties["artifactory.url"] as String)
     publish {
         repository {
-            setRepoKey("libs-snapshot-local")
-            setUsername(project.properties["artifactory.username"] as String)
-            setPassword(project.properties["artifactory.password"] as String)
-            setMavenCompatible(true)
+            repoKey = "libs-snapshot-local"
+            username = project.properties["artifactory.username"] as String
+            password = project.properties["artifactory.password"] as String
         }
         defaults {
             publications("kotlinMultiplatform","jvm", "linuxX64")
