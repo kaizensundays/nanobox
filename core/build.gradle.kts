@@ -48,10 +48,13 @@ kotlin {
     }
 }
 
-sqldelight {
-    databases {
-        create("Database") {
-            packageName.set("com.kaizensundays.labs.nanobox")
+val skipSqlDelight = true
+if (!skipSqlDelight) {
+    sqldelight {
+        databases {
+            create("Database") {
+                packageName.set("com.kaizensundays.labs.nanobox")
+            }
         }
     }
 }
@@ -69,6 +72,10 @@ tasks.withType<KotlinCompile>().configureEach {
     }
 }
 
+tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinNativeLink::class.java).configureEach {
+    enabled = !skipSqlDelight
+}
+
 println("Publication names:")
 publishing.publications.all {
     println(name)
@@ -83,7 +90,7 @@ artifactory {
             password = project.properties["artifactory.password"] as String
         }
         defaults {
-            publications("kotlinMultiplatform","jvm", "linuxX64")
+            publications("kotlinMultiplatform", "jvm", "linuxX64")
             setPublishArtifacts(true)
             setPublishPom(true)
         }
