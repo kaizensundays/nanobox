@@ -6,6 +6,8 @@ kotlinx-serialization-version = "1.4.1"
 ktor-version = "2.2.4"
 okio-version = "3.4.0"
 spring-version = "6.2.1"
+spring-boot-version = "3.4.1"
+jfrog-artifactory-version = "5.2.5"
 
 [libraries]
 kotlin-gradle-plugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin-version" }
@@ -31,3 +33,5 @@ kotlinJvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin-version" }
 kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin-version" }
 kotlinSerialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin-version" }
 kotlinSpring = { id = "org.jetbrains.kotlin.plugin.spring", version.ref = "kotlin-version" }
+springBoot = { id = "org.springframework.boot", version.ref = "spring-boot-version" }
+jfrogArtifactory = { id = "com.jfrog.artifactory", version.ref = "jfrog-artifactory-version"}

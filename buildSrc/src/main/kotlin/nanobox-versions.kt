@@ -4,7 +4,4 @@
  * @author Sergey Chuykov
  */
 
-const val SpringBootVersion = "3.4.1"
-const val JFrogArtifactoryPluginVersion = "5.2.5"
-
 const val bundleName = "nanobox"
