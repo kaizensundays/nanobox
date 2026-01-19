@@ -1,5 +1,5 @@
 [versions]
-kotlin-version = "2.0.21"
+kotlin-version = "2.2.21"
 logback-version = "1.2.13"
 mockito-kotlin-version = "3.2.0"
 kotlinx-serialization-version = "1.4.1"
@@ -27,4 +27,7 @@ spring-context = { module = "org.springframework:spring-context", version.ref = 
 [bundles]
 
 [plugins]
+kotlinJvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin-version" }
 kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin-version" }
+kotlinSerialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin-version" }
+kotlinSpring = { id = "org.jetbrains.kotlin.plugin.spring", version.ref = "kotlin-version" }
