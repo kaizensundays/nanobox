@@ -50,7 +50,10 @@ Use the example below:
 
 ## Test
  - Write a unit test for each <<control>> and <<boundary>> class that has any logic;
- - When changing the code in a package, run all tests in this package;
+- Use JUnit 5 for JVM tests;
+- Group JUnit 5 tests for each method using @Nested inner class;
+- Use Kotlin test for Linux tests;
+- When changing the code in a package, run all tests in this package;
  - Run tests sequentially;
  - Don't run tests whose names contain RemoteTest or ContainerTest;
 
