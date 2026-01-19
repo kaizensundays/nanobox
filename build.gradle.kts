@@ -5,5 +5,5 @@ plugins {
     kotlin("plugin.spring") version KotlinVersion apply false
     id("org.springframework.boot") version SpringBootVersion apply false
     id("com.jfrog.artifactory") version JFrogArtifactoryPluginVersion apply false
-    id("app.cash.sqldelight") version "2.2.1" apply false
+    //id("app.cash.sqldelight") version "2.2.1" apply false
 }
