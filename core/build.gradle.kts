@@ -6,7 +6,6 @@ plugins {
     alias(libs.plugins.kotlinSerialization)
     alias(libs.plugins.jfrogArtifactory)
     id("dependency-management")
-    //id("app.cash.sqldelight")
     `maven-publish`
 }
 
@@ -26,17 +25,11 @@ kotlin {
     }
     sourceSets["jvmMain"].dependencies {
         implementation(libs.logback.classic)
-        //implementation("app.cash.sqldelight:sqlite-driver:2.2.1")
-        //implementation("org.xerial:sqlite-jdbc:3.41.2.1")
     }
     sourceSets["jvmTest"].dependencies {
         implementation(kotlin("test"))
         implementation(kotlin("test-junit5"))
         implementation(libs.mockito.kotlin)
-    }
-    sourceSets.nativeMain.dependencies {
-        //implementation("app.cash.sqldelight:native-driver:2.2.1")
-        //implementation("org.xerial:sqlite-jdbc:3.41.2.1")
     }
 
     linuxX64().apply {
@@ -47,19 +40,6 @@ kotlin {
         }
     }
 }
-
-val skipSqlDelight = true
-/*
-if (!skipSqlDelight) {
-    sqldelight {
-        databases {
-            create("Database") {
-                packageName.set("com.kaizensundays.labs.nanobox")
-            }
-        }
-    }
-}
-*/
 
 tasks.withType<Test> {
     useJUnitPlatform()
@@ -73,12 +53,6 @@ tasks.withType<KotlinCompile>().configureEach {
         jvmTarget.set(JvmTarget.JVM_17)
     }
 }
-
-/*
-tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinNativeLink::class.java).configureEach {
-    enabled = !skipSqlDelight
-}
-*/
 
 println("Publication names:")
 publishing.publications.all {

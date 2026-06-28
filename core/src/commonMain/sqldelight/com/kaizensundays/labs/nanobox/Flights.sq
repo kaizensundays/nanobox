@@ -1,6 +1,0 @@
-CREATE TABLE airline
-(
-    id INTEGER PRIMARY KEY NOT NULL,
-    code TEXT NOT NULL,
-    name TEXT NOT NULL
-);
