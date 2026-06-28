@@ -2,9 +2,9 @@ import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    kotlin("multiplatform")
-    kotlin("plugin.serialization")
-    id("com.jfrog.artifactory")
+    alias(libs.plugins.kotlinMultiplatform)
+    alias(libs.plugins.kotlinSerialization)
+    alias(libs.plugins.jfrogArtifactory)
     id("dependency-management")
     `maven-publish`
 }
@@ -68,7 +68,7 @@ artifactory {
             password = project.properties["artifactory.password"] as String
         }
         defaults {
-            publications("kotlinMultiplatform","jvm", "linuxX64")
+            publications("kotlinMultiplatform", "jvm", "linuxX64")
             setPublishArtifacts(true)
             setPublishPom(true)
         }
